@@ -79,9 +79,9 @@ As tecnologias e dependências externas utilizadas foram:
 
 ## Estrutura do Banco de Dados
 *Observação: Os IDs e tokens são gerados automaticamente.*
-![user](https://github.com/MateusBorgesGuimaraes/shop-api/assets/104425878/ee0b3e3d-af88-423e-b740-f41b082ae846)
-![product](https://github.com/MateusBorgesGuimaraes/shop-api/assets/104425878/737aaa49-dc73-4378-8168-d85c5700566a)
-![cart](https://github.com/MateusBorgesGuimaraes/shop-api/assets/104425878/5e4d7fcb-2200-4c75-8844-daf918d19a31)
+- ![user](https://github.com/MateusBorgesGuimaraes/shop-api/assets/104425878/ee0b3e3d-af88-423e-b740-f41b082ae846)
+- ![product](https://github.com/MateusBorgesGuimaraes/shop-api/assets/104425878/737aaa49-dc73-4378-8168-d85c5700566a)
+- ![cart](https://github.com/MateusBorgesGuimaraes/shop-api/assets/104425878/5e4d7fcb-2200-4c75-8844-daf918d19a31)
 
 ## Créditos
 Inspirações para a criação da API:
