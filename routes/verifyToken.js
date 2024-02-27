@@ -9,7 +9,24 @@ const verifyToken = (req, res, next) => {
         console.error('Erro ao verificar o token:', err);
         return res.status(403).json('Token invalido');
       } else {
-        console.log('Informações do usuário no token:', user);
+        req.user = user;
+        next();
+      }
+    });
+  } else {
+    return res.status(401).json('Voce não esta autenticado');
+  }
+};
+
+const verifyTokenProd = (req, res, next) => {
+  const authHeader = req.headers.token;
+  if (authHeader) {
+    const token = authHeader.split(' ')[1];
+    jwt.verify(token, process.env.JWT_SEC, (err, user) => {
+      if (err) {
+        console.error('Erro ao verificar o token:', err);
+        return res.status(403).json('Token invalido');
+      } else {
         req.user = user;
         next();
       }
@@ -50,7 +67,7 @@ const verifyTokenAndAuthorizationGetCart = (req, res, next) => {
 };
 
 const verifyTokenAndAdmin = (req, res, next) => {
-  verifyToken(req, res, () => {
+  verifyTokenProd(req, res, () => {
     if (req.user.isAdmin) {
       next();
     } else {
@@ -65,4 +82,5 @@ module.exports = {
   verifyTokenAndAdmin,
   verifyTokenAndAuthorizationGetCart,
   verifyTokenAndAuthorizationUpdateCart,
+  verifyTokenProd,
 };
